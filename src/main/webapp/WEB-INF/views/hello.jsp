@@ -12,5 +12,6 @@
 </head>
 <body>
 <h1>Hello Huynh Quoc Trong!</h1>
+<h2>${path}</h2>
 </body>
 </html>

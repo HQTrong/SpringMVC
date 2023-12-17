@@ -1,22 +1,39 @@
 package com.example.controller;
 
+import com.example.util.Log4j;
+import org.apache.log4j.FileAppender;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PatternLayout;
+import org.apache.log4j.xml.DOMConfigurator;
+
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.MDC;
+
+import java.io.IOException;
+
 
 @Controller
 public class TestController {
-    private static final Logger logger = LogManager.getLogger(TestController.class);
+    Logger logger = Logger.getLogger(TestController.class);
+    //Log4j log4j = new Log4j();
     @RequestMapping( value = "/hello")
     public String hello(Model model) {
-    logger.info("Call /test");
-//    logger.error("Call /test");
-//    logger.debug("Call /test");
-    return "hello";
+        //String projectPath = log4j.getPath();
+
+//        try {
+//            FileAppender fileAppender = new FileAppender(new PatternLayout("%d %-5p [%c{1}] %m%n"),
+//                    projectPath + "/Log.log");
+//            logger.addAppender(fileAppender);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+        Log4j.addFileAppender(logger);
+
+        // Sử dụng Logger
+        logger.info("This is a log message.");
+        return "hello";
     }
+
 }
