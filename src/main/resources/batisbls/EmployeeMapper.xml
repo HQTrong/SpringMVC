@@ -3,7 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.batisbl.EmployeeMapper">
-    <select id="getAllEmployees" resultType="com.example.Entity.Employee" resultMap="result">
+    <resultMap type="employee" id="result">
+    </resultMap>
+    <select id="getAllEmployees" resultType="employee" resultMap="result">
         SELECT * FROM employee;
     </select>
 </mapper>

@@ -20,6 +20,6 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="com/example/batisbl/EmployeeMapper.xml"/>
+        <mapper resource="batisbls/EmployeeMapper.xml"/>
     </mappers>
 </configuration>
