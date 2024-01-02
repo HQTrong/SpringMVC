@@ -6,4 +6,8 @@
     <select id="findAll" resultMap="EmployeeResultMap">
         SELECT * FROM employee;
     </select>
+    <insert id="insert" parameterType="Employee" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO employee(name,email)
+        VALUES(#{name}, #{email})
+    </insert>
 </mapper>

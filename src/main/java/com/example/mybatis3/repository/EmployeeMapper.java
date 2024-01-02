@@ -10,16 +10,5 @@ import java.util.List;
 public interface EmployeeMapper {
     List<Employee> findAll();
 
-    Employee findById(long id);
-
-    //
-    int deleteById(long id);
-
-    int deleteAll();
-
-    //
     int insert(Employee employee);
-
-    //
-    int update(Employee employee);
 }
