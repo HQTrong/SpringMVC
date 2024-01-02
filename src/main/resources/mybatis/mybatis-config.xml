@@ -4,4 +4,7 @@
     <typeAliases>
         <typeAlias type="com.example.mybatis3.model.Employee" alias="Employee"/>
     </typeAliases>
+    <mappers>
+        <mapper resource="mybatis/mappers/EmployeeMapper.xml" />
+    </mappers>
 </configuration>
